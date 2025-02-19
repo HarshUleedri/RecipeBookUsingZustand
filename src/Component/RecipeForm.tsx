@@ -89,12 +89,12 @@ const RecipeForm = () => {
   };
 
   return (
-    <div>
+    <div className="flex items-start gap-4 ">
       <form
-        className="bg-white px-8 py-4 rounded mb-6"
+        className="bg-white w-1/2 px-8 py-4 rounded mb-6"
         onSubmit={handleAddRecipe}
       >
-        <div className="flex flex-col gap-4 mb-6">
+        <div className="flex  flex-col gap-4 mb-6">
           <label className="flex flex-col gap-2" htmlFor="name">
             Name of Recipe
             <input
@@ -153,7 +153,12 @@ const RecipeForm = () => {
         )}
       </form>
 
-      <div className=" overflow-y-auto space-y-4 px-4 h-60">
+      <div className=" w-1/2 overflow-y-auto space-y-4 px-4 h-[65vh]  ">
+        {recipes.length === 0 && (
+          <div className="text-3xl text-gray-500 bg-gray-50 px-6 text-center py-8">
+            Please have some Recipes
+          </div>
+        )}
         {recipes.map((recipe, index) => (
           <div className="bg-white p-4 rounded" key={index}>
             <div className="space-y-2 border-b border-gray-300 p-4 mb-6">
